@@ -1,12 +1,11 @@
-greeting = 'Hello'
-name = input('WHat is your name')
-
 #\n forces a new line, \t forces a tab (space)
 #print(type(age)) prints the type of a variable ‘age’
 #backslash = option + ž
 #integer = whole number with no fractional part
 #float = number with fractional part after decimal point
 
+greeting = 'Hello'
+name = input('What is your name')
 print(greeting + '' + name)
 
 a=12
@@ -16,12 +15,17 @@ print(a/b) # result is a float 4.0
 print(a//b) # integer division, rounded down towards minus infinity: result is 4, an integer
 print(a%b) # the reminder after integer division: result is 0
 
-for i in range(1, 4):
-  print(i) # result is 1, 2, 3
+# program that returns an error
+first_name = "John"
+last_name = "Cleese"
+age = 78
+print(first_name + last_name + age) # numerical values cannot be added to strings
 
-home = "ljubljana"
+for i in range(1, 4):
+  print(i) # result is 1, 2, 3, without number 4
 
 # SLICING
+home = "ljubljana"
 print(home[2]) # returns the third letter
 print(home[-1]) # returns the last letter
 # negative index: last letter is index -1, not index 0
@@ -52,6 +56,18 @@ print(home[-1:])
 # returns the first letter in a sequence
 print(home[:1]) # is equal to print(home[0]), but returns an error, if string is empty (while the first option still passes)
 
+days = "Mon, Tue, Wed, Thu, Fri, Sat, Sun"
+print(days[::5]) # returns: MTWTFSS, as it slices to every fifth character
+
+# all print the same output, extracting only the digits
+data = "1:A, 2:B, 3:C, 4:D, 5:E, 6:F, 7:G, 8:H"
+print(data[0:-1:5]) 
+print(data[:-1:5]) 
+print(data[::5]) 
+
+flower = "blue violet" 
+print('blue' in flower) # returns True
+
 # SEQUENCE OPERATORS (string, list, tuple, range, byte/bytearray)
 # string (can be used with + operator, star operator repeats a sequence a certain number of times)
 print("hello" * 5) # prints hello 5 times
@@ -78,4 +94,11 @@ print("{0:12f}".format(22 / 7)) # specifying float value: 6 digits affter decima
 print("{0:12.50f}".format(22 / 7)) # still specifying float value, with precision of 50: 50 points after decimal point
 # '12' is a field width
 
+# f-string
+name = "Ema"
+name2 = "Branko"
+print(name + f"loves {name2}") # returns: Ema loves Branko
 
+flower = "rose"
+colour = "red"
+print("The {0} is {1}".format(flower,colour)) # prints: The rose is red
