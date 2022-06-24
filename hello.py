@@ -102,3 +102,44 @@ print(name + f"loves {name2}") # returns: Ema loves Branko
 flower = "rose"
 colour = "red"
 print("The {0} is {1}".format(flower,colour)) # prints: The rose is red
+
+# code block = indented line
+# = is used for assigning values to variables, == is used for testing equality
+
+# IF STATEMENTS
+# getting a number from the user
+age = int(input("How old are you?")) # expects an integer 'int'
+if age >= 18: 
+  print("You are old enough to vote")
+elif age == 900: # if age is equal to 900, the condition evaluates as true
+  print("Sorry, Yoda, you dided in Return of the Jedi")
+else: 
+  print("Please come back in {0} years".format(18-age))
+
+# guess the number: outputs are different, depending on the user input
+answer = 5
+print("Please guess number between 1 and 10: ")
+guess = int(input()) # input is converted to an integer
+if guess != answer: # guess is not equal to the answer
+  if guess < answer:
+    print("Please guess higher")
+  else: # guess must be grewater than answer
+    print("Please guess lower")
+  guess = int(input()) # allows for another guess
+  if guess == answer:
+    print("Well done, you guessed it")
+  else: 
+    print("Sorry, you have not guessed it correctly")
+else:
+  print("You got it first time")
+
+# conditions (and, or)
+age = int(input("How old are you? "))
+if 16 <= age <= 65: 
+# if 16 < age < 65: if any of the conditions is true, tit will be evaluated to True: if age is less than 16, program does not have to check if is it also greater than 65
+  print("Have a good day at work")
+else:
+  print("Enjoy your free time")
+
+print("-" * 80) # prints 80 lines
+
