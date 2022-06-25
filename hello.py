@@ -160,4 +160,31 @@ if name: # if name input is true (the name was given), this line evaluates to tr
 else: # no name input was given
   print("Are you the man with no name?")
 
+# CHECKING IF SOMETHING IS IN THE SEQUENCE
+parrot = "Norwegian Blue"
+letter = input("Eneter a character: ") # also applies to words, is case sensitive
+if letter in parrot:
+  print("{} is in {}".format(letter, parrot))
+else:
+  print("The letter is not i n {}".format(parrot))
 
+# when comparing string, .casefold() is useful, as it transforms the letters to lowercase
+
+# FOR LOOPS
+# for loop that prints out all the capital letters in quote 
+quote = """Alright, but apart from the Sanitation, the Medicine, Education, Wine, Public Order, Irrigation, Roads, the Fresh-Water System, and Public Health, what have the Romans ever done for us?"""
+for char in quote:
+    if char.isupper():
+        print(char)
+
+# iterating over a range (does not include the stop value)
+for i in range(0,10):
+    print("{}".format(i)) # prints the number from 0 to 9
+
+# starts at 0, up to 9
+for i in range(10):
+  print("{}".format(i))
+
+# values from 0 to 100, in steps of 7 (also all the printed numbers are divisible by 7)
+for i in range(0, 100, 7):
+  print("{}".format(i))
