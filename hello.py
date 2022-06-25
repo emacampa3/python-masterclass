@@ -73,7 +73,7 @@ print('blue' in flower) # returns True
 
 # SEQUENCE OPERATORS (string, list, tuple, range, byte/bytearray)
 # string (can be used with + operator, star operator repeats a sequence a certain number of times)
-print("hello" * 5) # prints hello 5 times
+# print("hello" * 5) prints hello 5 times
 # list & tuple can also be multiplied
 
 # curly brace is replaced with the first value in the format list, age
