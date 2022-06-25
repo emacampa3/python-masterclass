@@ -115,7 +115,7 @@ age = int(input("How old are you?")) # expects an integer 'int'
 if age >= 18: 
   print("You are old enough to vote")
 elif age == 900: # if age is equal to 900, the condition evaluates as true
-  print("Sorry, Yoda, you dided in Return of the Jedi")
+  print("Sorry, Yoda, you died in Return of the Jedi")
 else: 
   print("Please come back in {0} years".format(18-age))
 
