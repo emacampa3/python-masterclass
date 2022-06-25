@@ -4,6 +4,9 @@
 #integer = whole number with no fractional part
 #float = number with fractional part after decimal point
 
+from calendar import MONDAY
+
+
 greeting = 'Hello'
 name = input('What is your name')
 print(greeting + '' + name)
@@ -142,4 +145,19 @@ else:
   print("Enjoy your free time")
 
 print("-" * 80) # prints 80 lines
+
+# TRUE/FALSE
+# FALSE: none, any type of 0, empty sequences
+if 0: # 0 evaluates True
+  print("True") # cannot be executed
+else: 
+  print("False") # returns False, as 0 can never be True
+
+name = input("Please enter your name: ")
+if name: # if name input is true (the name was given), this line evaluates to true and executes
+# if name != "": another way of checking the input
+  print("Hello, {}".format(name))
+else: # no name input was given
+  print("Are you the man with no name?")
+
 
