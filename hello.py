@@ -188,3 +188,60 @@ for i in range(10):
 # values from 0 to 100, in steps of 7 (also all the printed numbers are divisible by 7)
 for i in range(0, 100, 7):
   print("{}".format(i))
+
+# NESTED FOR LOOP: multiplication table (12x12)
+for i in range(1,13):
+  for j in range(1,13):
+    print("{0} times {1} is {2}".format(j, i, i * j))
+
+# list = ordered sequence of values, in square brackets
+shopping_list = ["milk", "pasta", "eggs"]
+# prints all items, except for bread
+for item in shopping_list:
+  if item == "bread":
+    continue # causes all the remaining code in the block to be skipped
+    # break (instead of continue) after its execution causes the loop to stop: useful, when searching for an item
+  print("Buy" + item)
+
+#searching for an item in range
+shopping_list = ["milk", "bread", "pasta", "eggs"]
+item_to_find = "pasta"
+found_at = None # constant, that shows that something does not have a value
+
+for index in range(len(shopping_list)):
+  if shopping_list[index] == item_to_find:
+    found_at = index
+    break
+
+# if item_to_find in shopping_list:
+#   found_at = shopping_list.index(item_to_find)
+  
+if found_at is not None: # if item is found
+  print("Item found at position {}".format(found_at)) # Item found at position 2
+else: # if item is not found
+  print("{} not found".format(item_to_find))
+
+# WHILE LOOPS
+# iterating over the numbers
+i = 0
+while i < 10: # while condition is true, execute this block
+  print("{}".format(i))
+  i += 1
+
+# if input equals to an item in the list, loop breaks
+available_exits = ["n", "s", "e", "w"]
+chosen_exit = ""
+
+while chosen_exit not in available_exits: # requests an item for as long as input is false
+  chosen_exit = input("Please choose a direction: ")
+  if chosen_exit.casefold() == "quit":
+    print("Game over")
+    break
+  
+print("aren't you glad you got out of there")
+
+# prints the numbers from 0 to 20 that arent divisible by 3 or 5
+for i in range(21):
+    if i%3 == 0 or i%5 == 0:
+        continue
+    print(i)
