@@ -237,7 +237,7 @@ while chosen_exit not in available_exits: # requests an item for as long as inpu
   if chosen_exit.casefold() == "quit":
     print("Game over")
     break
-  
+
 print("aren't you glad you got out of there")
 
 # prints the numbers from 0 to 20 that arent divisible by 3 or 5
@@ -245,3 +245,65 @@ for i in range(21):
     if i%3 == 0 or i%5 == 0:
         continue
     print(i)
+
+
+import random
+highest = 10
+answer = random.randint(1,highest) # function in random module (generates a random number within the range)
+print(answer) # only for testing
+guess = 0 # initialise to any number, that does not equal the answer
+print("Please guess number between 1 and {}".format(highest))
+
+while guess != answer: # loops until guess equals the answer
+  guess = int(input())
+
+  if guess == 0: # player can exit the game
+    break
+  if guess == answer:
+    print("You have guessed it")
+    break
+  else:
+    if guess < answer:
+      print("Guess higher")
+    else: 
+      print("Guess lower")
+
+# splitting the code: "", ENTER, ""
+
+# BINARY SEARCH: to guess a number between 1 and 1000, with halving the guesses, 10 guesses are needed (1000, 500, 250 or 750 and so on)
+low = 1
+high = 1000
+print("Please think of a number between {} and {}".format(low,high))
+input("Press ENTER to start")
+
+guesses = 1
+while True: 
+  print("\tGuessing in the range of {} and {}".format(low,high))
+  guess = low + (high - low) // 2 # calculates the mid point between the lowest and highest value
+  high_low = input("My guess is {}. Should I guess higher or lower? Enter h or l, or c, if my guess was correct ".format(guess).casefold())
+ 
+  if high_low == "h": # guess higher
+    low = guess + 1
+  elif high_low == "l": # guess lower
+    high = guess - 1
+  elif high_low == "c":  
+    print("I got it in {} guesses".format(guesses))
+    break
+  else: 
+    print("Enter h, l or c")
+  
+  guesses *= 1
+
+# AUGMENTED ASSIGNMENT
+greeting = "Good "
+greeting += "morning "
+greeting *= 5
+print(greeting) # prints Good morning 5 times
+
+# 5 * 8: adding 5 eight times
+multiplier = 8
+answer = 0
+for i in range(multiplier):
+  answer += number
+print(answer)
+
