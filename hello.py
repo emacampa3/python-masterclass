@@ -5,6 +5,7 @@
 #float = number with fractional part after decimal point
 
 from calendar import MONDAY
+from functools import partial
 
 
 greeting = 'Hello'
@@ -353,3 +354,72 @@ for x in range(30):
   if x % 3 != 0 and x % 5 != 0:
     print(x)
 
+# LIST
+computer_parts = ["monitor", "keyboard", "mouse"]
+for part in computer_parts:
+  print(part)
+
+print(computer_parts[0:3]) # slicing a list produces another list
+
+# immunable types: int, float, bool, str, tupple, bytes, frozen set (values cannot be changed)
+# mutable objects: list, dict, set, bytearray (values can be changed)
+# adding an item to the shopping list: 
+shopping_list += ["cookies"]
+shopping_list.append("cream") 
+
+print("mississippi".count("s")) # 4: string 's' appears 4 times
+
+
+available_parts = ["keyboard", "monitor", "mouse"]
+# created an empty list, add valid choices to that list
+valid_choices = []
+for i in range(1, len(available_parts) + 1): # output are indexes of parts + 1
+  valid_choices.append(str(i))
+print(valid_choices) 
+
+current_choice = "-"
+computer_parts = [] # new empty list, that will contain the parts added to the list
+while current_choice != 0:
+  if current_choice in valid_choices:
+    print("Adding {}".format(current_choice))
+    index = int(current_choice) - 1
+    chosen_part = available_parts[index]
+    computer_parts.append(chosen_part)
+  else: 
+    print("Please add options from the list below:")
+    for number, part in enumerate(available_parts): # returns a pair of values (index position = number and value of the item = part)
+      print("{0}: {1}".format(number + 1, part))
+  
+  current_choice = input()
+
+print(computer_parts)
+
+
+for index, character in enumerate("abcdef"):
+  print(index, character) # index numbers match the characters
+
+# Challenge: sort data into two lists
+data = [
+  "Andromeda - Shrub",
+  "Bellflower - Flower",
+  "China Pink - Flower",
+  "Daffodil - Flower",
+  "Evening Primrose - Flower",
+  "French Marigold - Flower",
+  "Hydrangea - Shrub",
+  "Iris - Flower",
+  "Japanese Camellia - Shrub",
+  "Lavender - Shrub",
+  "Lilac - Shrub",
+  "Magnolia - Shrub",
+]
+
+flowers = []
+shrubs = []
+
+for plant in data:
+  if "Flower" in plant:
+    flowers.append(plant)
+  else:
+    shrubs.append(plant)
+       
