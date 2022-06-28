@@ -238,14 +238,14 @@ while chosen_exit not in available_exits: # requests an item for as long as inpu
     print("Game over")
     break
 
-print("aren't you glad you got out of there")
+else:
+  print("aren't you glad you got out of there")
 
 # prints the numbers from 0 to 20 that arent divisible by 3 or 5
 for i in range(21):
     if i%3 == 0 or i%5 == 0:
         continue
     print(i)
-
 
 import random
 highest = 10
@@ -277,8 +277,7 @@ print("Please think of a number between {} and {}".format(low,high))
 input("Press ENTER to start")
 
 guesses = 1
-while True: 
-  print("\tGuessing in the range of {} and {}".format(low,high))
+while low != high: # continue looping as long as this is True (when they are equal: correct number is found, the loop will terminate)
   guess = low + (high - low) // 2 # calculates the mid point between the lowest and highest value
   high_low = input("My guess is {}. Should I guess higher or lower? Enter h or l, or c, if my guess was correct ".format(guess).casefold())
  
@@ -291,8 +290,11 @@ while True:
     break
   else: 
     print("Enter h, l or c")
-  
+
   guesses *= 1
+else: # runs when loop is terminated normally
+  print("You though of the number {}".format(low))
+  print("I got it in {} guesses".format(guesses))
 
 # AUGMENTED ASSIGNMENT
 greeting = "Good "
@@ -306,4 +308,48 @@ answer = 0
 for i in range(multiplier):
   answer += number
 print(answer)
+
+numbers = [1, 45, 32, 12, 60]
+for number in numbers:
+  if number % 8 == 0: # reject if exactly divisible by 8
+    print("numbers are unacceptable")
+    break
+else: # result if the loop terminates nrormally (if the loop is terminated before, this does not run)
+  print("numbers are fine")
+
+# Challenge
+choice = None
+
+while choice != "0":
+  if choice in "12345":
+    print("You choose {}".format(choice))
+  else:
+    print("Please chose your option from the list below:")
+    print("1:\tLearn Python")
+    print("2:\tLearn Java")
+    print("3:\tGo swimming")
+    print("4:\tHave dinner")
+    print("5:\tGo to bed")
+    print("0:\tExit")
+
+  choice = input()
+
+# Program, that prints out the even numbers from 0 to 20 (inclusive)
+for value in range(11):
+  value *= 2
+  print(value)
+
+# more efficient
+for value in range(0,21,2):
+  print(value)
+
+for x in range(30):
+  if x % 3 == 0 or x % 5 == 0:
+    continue
+  print(x)
+
+# the same output
+for x in range(30):
+  if x % 3 != 0 and x % 5 != 0:
+    print(x)
 
