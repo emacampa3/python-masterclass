@@ -381,10 +381,16 @@ current_choice = "-"
 computer_parts = [] # new empty list, that will contain the parts added to the list
 while current_choice != 0:
   if current_choice in valid_choices:
-    print("Adding {}".format(current_choice))
     index = int(current_choice) - 1
     chosen_part = available_parts[index]
-    computer_parts.append(chosen_part)
+    # if part is already in list, remove it
+    if chosen_part in computer_parts:
+      print("Removing {}".format(current_choice))
+      computer_parts.remove(chosen_part)
+    else:
+      print("Adding {}".format(current_choice))
+      computer_parts.append(chosen_part)
+    print("Your list now contains: {}".format(computer_parts))
   else: 
     print("Please add options from the list below:")
     for number, part in enumerate(available_parts): # returns a pair of values (index position = number and value of the item = part)
@@ -422,4 +428,82 @@ for plant in data:
     flowers.append(plant)
   else:
     shrubs.append(plant)
-       
+
+even = [2,4,6,8]
+odd = [1,3,5,7,9]
+even.extend(odd) # adding odd to even
+even.sort(reverse=True) # without condition, list is ascending sorted 
+print(even)
+
+pangram = "The quick brown fox jumps over the lazy dog"
+letters = sorted(pangram, key=str.casefold) # case insensitive sort
+print(letters) # returns the list with alphabetically sorted items
+
+numbers = [2.3, 4.5, 8.7, 3.1, 9.1, 1.6]
+sorted_numbers = sorted(numbers) # returns a new list list (original list is not altered)
+print(sorted_numbers)
+numbers.sort() # the same sorted output, but returns an original sorted list
+# another_sorted_numbers = numbers.sort() function 'sort' does not return anything:assigning sort method to a variable is a no go: another_sorted_numbers returns None
+print(numbers)
+
+names = ["Graham", "john", "Emma", "eric", "Terry", "Marco"]
+names.sort(key=str.casefold)
+print(names)
+
+empty:list = []
+even = [2,4,6,8]
+odd = [1,3,5,7,9]
+numbers = even + odd 
+sorted_numbers = sorted(numbers) # ordered list of ints
+digits = sorted("23462046") # returns a list of strings (digits): sorting a string results in list of sorted strings
+digits = list("23462046") # returns an unsorted list of strings
+more_numbers = numbers[:] # duplicating an existing list by slicing it
+more_numbers = numbers.copy() # copying the numbers list
+
+computer_parts = ["monitor", "mouse", "keyboard"]
+computer_parts[1] = "computer" # replaces the 2nd item 
+computer_parts[3:] = ["computer"] # must be a list
+
+date = [42,45,17,143,544,76,22,42,5325,813,68674,34,142,5254,6,775]
+min_valid = 10
+max_valid = 300
+
+# process the low values
+stop = 0
+for index, value in enumerate(data):
+  if value >= min_valid:
+    stop = index
+    break
+print(stop)
+del data[:stop]
+print(data)
+
+# process the high values
+start = 0
+for index in range(len(data) - 1, -1, -1): # range starting at the end, up to the first value at position 0 (since stop value is not included, -1), step of -1: backwards
+  print(index) # checking to see if positions are correct
+  if data[index] <= max_valid: # returns a start value, equal to the position to the last item, we still want to keep
+    start = index + 1 
+    break
+print(start)
+del data[start:]
+print(data)
+
+# removing rouge values by iterating backwards
+data = [104, 101, 4, 308, 103, 5, 107, 100, 306, 124]
+min_valid = 100
+max_valid = 200
+
+for index in range(len(data) -1, -1, -1):
+  print(index) # indexes of the numbers in reverse order
+  if data[index] < min_valid or data[index] > max_valid:
+    print(index, data) # index of rouge numbers
+    del data[index]
+print(data) # only the correct values
+
+# another version
+top_index = len(data) -1 # index of the last item in array
+for index, value in enumerate(reversed(data)):
+  if value < min_valid or value > max_valid:
+    print(top_index - index, value) # values with indexes in reversed order
+    del data[top_index - index]
