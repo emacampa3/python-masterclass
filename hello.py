@@ -507,3 +507,44 @@ for index, value in enumerate(reversed(data)):
   if value < min_valid or value > max_valid:
     print(top_index - index, value) # values with indexes in reversed order
     del data[top_index - index]
+
+empty_list = []
+even = [2,4,6,8]
+odd = [1,3,5,7,9]
+numbers = [even, odd] # a list containing two lists
+print(numbers)
+
+for number_list in numbers:
+  print(number_list) # prints both lists: number_list is an item in array, that is also a list
+
+  for value in number_list:
+    print(value) # prints all values inside each lsit
+
+# menu is a nested list, containing meals with spam; Challenge: print meals with spam removed
+menu = []
+
+for meal in menu:
+  if "spam" not in meal:
+    print(meal)
+  else:
+    meal.remove("spam")
+    print(meal)
+
+# the same result
+for meal in menu:
+  for item in meal:
+    if item != "spam":
+      print(item , end=" ") # provides space between items 
+  print() # new line for meals
+
+# the same result
+for meal in menu:
+  for index in range(len(meal) -1, -1, -1):
+    if meal[index] == "spam":
+      del meal[index]
+  print(meal) 
+
+name = "Ema"
+age = 22
+print(name, age) # Ema 22: sep default is space
+print(name, age, sep=", ") # Ema, 22
