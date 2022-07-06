@@ -548,3 +548,49 @@ name = "Ema"
 age = 22
 print(name, age) # Ema 22: sep default is space
 print(name, age, sep=", ") # Ema, 22
+
+# all the items inside an array must be strings
+flowers = [ "daffodil", "primrose", "hydrangea", "iris", "lavender", "sunflower", "lily"]
+separator = ", "
+output = separator.join(flowers) # joins the flowers into a single string, separating them with comma
+print(output)
+# the same result
+print(", ".join(flowers))
+
+for meal in menu:
+  for index in range(len(meal) -1, -1, -1):
+    if meal[index] == "spam":
+      del meal[index]
+  print(", ".join(meal)) # items of each meal are printed on the same line, separated with comma
+
+panagram = "The quick fox jumps over the lazy dog"
+words = panagram.split() # list, containing the words in the string
+print(words)
+
+numbers = "843.393.919.920"
+print(numbers.split(".")) # ["843", "393", "919", "920"]
+
+values_list = ["843", "393", "919", "920"]
+for index in range(len(values_list)): # list of ints rather than strings, using for loop
+  values_list[index] = int(values_list[index])
+print(values_list) # from ["843", "393", "919", "920"] to [843, 393, 919, 920]
+
+# another method
+integer_values = []
+for value in values_list:
+  integer_values.append(int(value)) # converting to an int and appending to new list
+print(integer_values)
+
+# Challenge
+user_input = input("Please enter three numbers: ")
+split_string = user_input.split(",")
+
+# Convert the split_string into integers
+int_list = []
+for ss in split_string:
+    int_list.append(int(ss))
+
+# Calculate the result: a + b - c
+result = int_list[0] + int_list[1] - int_list[2]
+print(result)
+
