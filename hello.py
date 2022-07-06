@@ -594,3 +594,14 @@ for ss in split_string:
 result = int_list[0] + int_list[1] - int_list[2]
 print(result)
 
+# TUPLES: does not support item assignment (immutable), use less memory
+name = "Ema"
+age = 22
+print(name, age) # Ema 22
+print((name, age)) # tuple: ("Ema", 22)
+
+metallica = "Ride the Lightning", "Metallica", 1984
+print(metallica[1]) # Metallica
+
+metallica2 = list(metallica)
+print(metallica2) # returns a list with items inside a tuple, items can be changed
