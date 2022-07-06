@@ -603,5 +603,27 @@ print((name, age)) # tuple: ("Ema", 22)
 metallica = "Ride the Lightning", "Metallica", 1984
 print(metallica[1]) # Metallica
 
+title, artist, year = metallica
+print(title, artist, year)
+
 metallica2 = list(metallica)
 print(metallica2) # returns a list with items inside a tuple, items can be changed
+
+data = 1, 2 # tuple can always be unpacked successfully: always the same number of items
+x, y = data
+print(x) # 1
+print(y) # 2
+
+for t in enumerate("abcd"):
+  index, character = t
+  print(index, character) # returns pairs with index and character at that index position
+
+table = ("table", 200, 100, 75)
+name, length, width, height = table
+print(length * width) # 200 * 100
+
+albums = [("Ride the Lightning", "Metallica", 1984), ("More Mayhem", "Emilda May", 2011), ("Welcome to my Nightmare", "Alice Cooper", 1975)]
+print(len(albums)) # 3
+
+for name, artist, year in albums: # unpacking tuples
+  print("Album: {}, Artist: {}, Year: {}".format(name, artist, year))
