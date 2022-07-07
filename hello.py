@@ -242,7 +242,7 @@ while chosen_exit not in available_exits: # requests an item for as long as inpu
 else:
   print("aren't you glad you got out of there")
 
-# prints the numbers from 0 to 20 that arent divisible by 3 or 5
+# prints the numbersfor i  from 0 to 20 that arent divisible by 3 or 5
 for i in range(21):
     if i%3 == 0 or i%5 == 0:
         continue
@@ -676,3 +676,13 @@ print(song[1]) # title of 2nd song of the 3rd album
 # Song: Reaper of the Glory
 reaper = albums[2][3][2][1]
 print(reaper)
+
+# FUNCTIONS
+def multiply():
+  result = 10.5 * 4
+  return result
+
+answer = multiply()
+print(answer)
+
+
