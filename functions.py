@@ -1,5 +1,17 @@
 # FUNCTIONS
-def multiply(x, y): # x, y = parameters
+def multiply(x: float, y: float) -> float: # x, y = parameters
+  """
+    Multiply 2 numbers.
+ 
+    Although this function is intended to multiply 2 numbers,
+    you can also use it to multiply a sequence.  If you pass
+    a string, for example, as the first argument, you'll get
+    the string repeated `y` times as the returned value.
+ 
+    :param x: The first number to multiply.
+    :param y: The number to multiply `x` by.
+    :return: The product of `x` and `y`.
+    """
   result = x * y
   return result
 
@@ -15,6 +27,19 @@ for val in range(1,5):
 def is_palindrome(string):
   # reversing the original string, checking, if reversed string equals original: evaluates to True or False
   return string[::-1].casefold() == string.casefold()
+
+word = input("Enter a word to check: ")
+if is_palindrome(word):
+  print("'{}' is a palindorme".format(word))
+else:
+  print("'{}' is not a palindorme".format(word))
+
+
+# Palindrome function with annotation
+def is_palindrome(string: str) -> bool: # function tyoe and return of the function
+  # reversing the original string, checking, if reversed string equals original: evaluates to True or False
+  return string[::-1].casefold() == string.casefold()
+
 
 word = input("Enter a word to check: ")
 if is_palindrome(word):
@@ -70,3 +95,15 @@ banner_text("Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
 banner_text("Maecenas ornare lacus lacus, vitae luctus enim ultricies auctor.")
 banner_text("Ut eget sollicitudin nunc, quis mattis est. Morbi.")
 banner_text("*")
+
+# using a diferent parameter definition
+def sum_numbers(*values: float) -> float:
+  """ calculates the sum of all the numbers passed as arguments """
+  result = 0
+  for number in values:
+    result += number
+  return result
+
+
+print(sum_numbers(1, 2, 3))
+print(sum_numbers(8, 20, 2))

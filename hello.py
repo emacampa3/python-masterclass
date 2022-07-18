@@ -685,4 +685,5 @@ def multiply():
 answer = multiply()
 print(answer)
 
-
+numbers = (0, 1, 2, 3, 4)
+print(*numbers) # prints only the arguments, without the braces
